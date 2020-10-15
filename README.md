@@ -6,7 +6,7 @@ between the Whisp client(s) and server.
 * CMake >=3.12
 * Make
 * C++17 compiler
-* [Google Protocol Buffers](https://developers.google.com/protocol-buffers) =3.13.0
+* [Google Protocol Buffers](https://developers.google.com/protocol-buffers) >=3.13.0
 
 ## Building
 This repository compiles the `.proto` files into source files that can then be
