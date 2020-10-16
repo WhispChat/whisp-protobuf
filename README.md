@@ -29,6 +29,7 @@ mkdir build
 ```
 cd build/
 cmake .. && make -j
+cmake .. # needed for post build step for copying files from CMake build directory
 ```
 
 This will generate the source files in their respective output directories. For
