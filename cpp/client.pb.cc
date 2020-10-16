@@ -20,7 +20,25 @@ class MessageDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Message> _instance;
 } _Message_default_instance_;
+class CommandDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Command> _instance;
+} _Command_default_instance_;
 }  // namespace client
+static void InitDefaultsscc_info_Command_client_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::client::_Command_default_instance_;
+    new (ptr) ::client::Command();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::client::Command::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Command_client_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Command_client_2eproto}, {}};
+
 static void InitDefaultsscc_info_Message_client_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -36,7 +54,7 @@ static void InitDefaultsscc_info_Message_client_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Message_client_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_client_2eproto[1];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_client_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_client_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_client_2eproto = nullptr;
 
@@ -49,33 +67,44 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_client_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::client::Message, username_),
   PROTOBUF_FIELD_OFFSET(::client::Message, content_),
   PROTOBUF_FIELD_OFFSET(::client::Message, timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::client::Command, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::client::Command, type_),
+  PROTOBUF_FIELD_OFFSET(::client::Command, args_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::client::Message)},
+  { 8, -1, sizeof(::client::Command)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::client::_Message_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::client::_Command_default_instance_),
 };
 
 const char descriptor_table_protodef_client_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014client.proto\022\006client\032\037google/protobuf/"
   "timestamp.proto\"[\n\007Message\022\020\n\010username\030\001"
   " \001(\t\022\017\n\007content\030\002 \001(\t\022-\n\ttimestamp\030\003 \001(\013"
-  "2\032.google.protobuf.Timestampb\006proto3"
+  "2\032.google.protobuf.Timestamp\"%\n\007Command\022"
+  "\014\n\004type\030\001 \001(\t\022\014\n\004args\030\002 \003(\tb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_client_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_client_2eproto_sccs[1] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_client_2eproto_sccs[2] = {
+  &scc_info_Command_client_2eproto.base,
   &scc_info_Message_client_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_client_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_client_2eproto = {
-  false, false, descriptor_table_protodef_client_2eproto, "client.proto", 156,
-  &descriptor_table_client_2eproto_once, descriptor_table_client_2eproto_sccs, descriptor_table_client_2eproto_deps, 1, 1,
+  false, false, descriptor_table_protodef_client_2eproto, "client.proto", 195,
+  &descriptor_table_client_2eproto_once, descriptor_table_client_2eproto_sccs, descriptor_table_client_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_client_2eproto::offsets,
-  file_level_metadata_client_2eproto, 1, file_level_enum_descriptors_client_2eproto, file_level_service_descriptors_client_2eproto,
+  file_level_metadata_client_2eproto, 2, file_level_enum_descriptors_client_2eproto, file_level_service_descriptors_client_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -379,11 +408,260 @@ void Message::InternalSwap(Message* other) {
 }
 
 
+// ===================================================================
+
+void Command::InitAsDefaultInstance() {
+}
+class Command::_Internal {
+ public:
+};
+
+Command::Command(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  args_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:client.Command)
+}
+Command::Command(const Command& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      args_(from.args_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_type().empty()) {
+    type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_type(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:client.Command)
+}
+
+void Command::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Command_client_2eproto.base);
+  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+Command::~Command() {
+  // @@protoc_insertion_point(destructor:client.Command)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void Command::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Command::ArenaDtor(void* object) {
+  Command* _this = reinterpret_cast< Command* >(object);
+  (void)_this;
+}
+void Command::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Command::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Command& Command::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Command_client_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Command::Clear() {
+// @@protoc_insertion_point(message_clear_start:client.Command)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  args_.Clear();
+  type_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Command::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string type = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_type();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "client.Command.type"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated string args = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_args();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "client.Command.args"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Command::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:client.Command)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string type = 1;
+  if (this->type().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_type().data(), static_cast<int>(this->_internal_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "client.Command.type");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_type(), target);
+  }
+
+  // repeated string args = 2;
+  for (int i = 0, n = this->_internal_args_size(); i < n; i++) {
+    const auto& s = this->_internal_args(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "client.Command.args");
+    target = stream->WriteString(2, s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:client.Command)
+  return target;
+}
+
+size_t Command::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:client.Command)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string args = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(args_.size());
+  for (int i = 0, n = args_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      args_.Get(i));
+  }
+
+  // string type = 1;
+  if (this->type().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Command::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:client.Command)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Command* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Command>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:client.Command)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:client.Command)
+    MergeFrom(*source);
+  }
+}
+
+void Command::MergeFrom(const Command& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:client.Command)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  args_.MergeFrom(from.args_);
+  if (from.type().size() > 0) {
+    _internal_set_type(from._internal_type());
+  }
+}
+
+void Command::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:client.Command)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Command::CopyFrom(const Command& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:client.Command)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Command::IsInitialized() const {
+  return true;
+}
+
+void Command::InternalSwap(Command* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  args_.InternalSwap(&other->args_);
+  type_.Swap(&other->type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Command::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace client
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::client::Message* Arena::CreateMaybeMessage< ::client::Message >(Arena* arena) {
   return Arena::CreateMessageInternal< ::client::Message >(arena);
+}
+template<> PROTOBUF_NOINLINE ::client::Command* Arena::CreateMaybeMessage< ::client::Command >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::client::Command >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
