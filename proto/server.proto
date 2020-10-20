@@ -5,8 +5,8 @@ import "google/protobuf/timestamp.proto";
 package server;
 
 message Status {
-  bool full = 1;
-  uint64 number_connections = 2;
+  uint64 number_connections = 1;
+  uint64 max_connections = 2;
   google.protobuf.Timestamp timestamp = 3;
 }
 

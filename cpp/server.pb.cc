@@ -65,8 +65,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_server_2eproto::offsets[] PROT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::server::Status, full_),
   PROTOBUF_FIELD_OFFSET(::server::Status, number_connections_),
+  PROTOBUF_FIELD_OFFSET(::server::Status, max_connections_),
   PROTOBUF_FIELD_OFFSET(::server::Status, timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::server::Message, _internal_metadata_),
@@ -89,14 +89,14 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_server_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014server.proto\022\006server\032\037google/protobuf/"
-  "timestamp.proto\"a\n\006Status\022\014\n\004full\030\001 \001(\010\022"
-  "\032\n\022number_connections\030\002 \001(\004\022-\n\ttimestamp"
-  "\030\003 \001(\0132\032.google.protobuf.Timestamp\"\243\001\n\007M"
-  "essage\022)\n\004type\030\001 \001(\0162\033.server.Message.Me"
-  "ssageType\022\017\n\007content\030\002 \001(\t\022-\n\ttimestamp\030"
-  "\003 \001(\0132\032.google.protobuf.Timestamp\"-\n\013Mes"
-  "sageType\022\010\n\004INFO\020\000\022\t\n\005ERROR\020\001\022\t\n\005DEBUG\020\002"
-  "b\006proto3"
+  "timestamp.proto\"l\n\006Status\022\032\n\022number_conn"
+  "ections\030\001 \001(\004\022\027\n\017max_connections\030\002 \001(\004\022-"
+  "\n\ttimestamp\030\003 \001(\0132\032.google.protobuf.Time"
+  "stamp\"\243\001\n\007Message\022)\n\004type\030\001 \001(\0162\033.server"
+  ".Message.MessageType\022\017\n\007content\030\002 \001(\t\022-\n"
+  "\ttimestamp\030\003 \001(\0132\032.google.protobuf.Times"
+  "tamp\"-\n\013MessageType\022\010\n\004INFO\020\000\022\t\n\005ERROR\020\001"
+  "\022\t\n\005DEBUG\020\002b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_server_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -107,7 +107,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ser
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_server_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_server_2eproto = {
-  false, false, descriptor_table_protodef_server_2eproto, "server.proto", 328,
+  false, false, descriptor_table_protodef_server_2eproto, "server.proto", 339,
   &descriptor_table_server_2eproto_once, descriptor_table_server_2eproto_sccs, descriptor_table_server_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_server_2eproto::offsets,
   file_level_metadata_server_2eproto, 2, file_level_enum_descriptors_server_2eproto, file_level_service_descriptors_server_2eproto,
@@ -176,16 +176,16 @@ Status::Status(const Status& from)
     timestamp_ = nullptr;
   }
   ::memcpy(&number_connections_, &from.number_connections_,
-    static_cast<size_t>(reinterpret_cast<char*>(&full_) -
-    reinterpret_cast<char*>(&number_connections_)) + sizeof(full_));
+    static_cast<size_t>(reinterpret_cast<char*>(&max_connections_) -
+    reinterpret_cast<char*>(&number_connections_)) + sizeof(max_connections_));
   // @@protoc_insertion_point(copy_constructor:server.Status)
 }
 
 void Status::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Status_server_2eproto.base);
   ::memset(&timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&full_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(full_));
+      reinterpret_cast<char*>(&max_connections_) -
+      reinterpret_cast<char*>(&timestamp_)) + sizeof(max_connections_));
 }
 
 Status::~Status() {
@@ -225,8 +225,8 @@ void Status::Clear() {
   }
   timestamp_ = nullptr;
   ::memset(&number_connections_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&full_) -
-      reinterpret_cast<char*>(&number_connections_)) + sizeof(full_));
+      reinterpret_cast<char*>(&max_connections_) -
+      reinterpret_cast<char*>(&number_connections_)) + sizeof(max_connections_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -238,17 +238,17 @@ const char* Status::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bool full = 1;
+      // uint64 number_connections = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          full_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          number_connections_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 number_connections = 2;
+      // uint64 max_connections = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          number_connections_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          max_connections_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -287,16 +287,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bool full = 1;
-  if (this->full() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_full(), target);
-  }
-
-  // uint64 number_connections = 2;
+  // uint64 number_connections = 1;
   if (this->number_connections() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_number_connections(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_number_connections(), target);
+  }
+
+  // uint64 max_connections = 2;
+  if (this->max_connections() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_max_connections(), target);
   }
 
   // .google.protobuf.Timestamp timestamp = 3;
@@ -330,16 +330,18 @@ size_t Status::ByteSizeLong() const {
         *timestamp_);
   }
 
-  // uint64 number_connections = 2;
+  // uint64 number_connections = 1;
   if (this->number_connections() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_number_connections());
   }
 
-  // bool full = 1;
-  if (this->full() != 0) {
-    total_size += 1 + 1;
+  // uint64 max_connections = 2;
+  if (this->max_connections() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_max_connections());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -379,8 +381,8 @@ void Status::MergeFrom(const Status& from) {
   if (from.number_connections() != 0) {
     _internal_set_number_connections(from._internal_number_connections());
   }
-  if (from.full() != 0) {
-    _internal_set_full(from._internal_full());
+  if (from.max_connections() != 0) {
+    _internal_set_max_connections(from._internal_max_connections());
   }
 }
 
@@ -406,8 +408,8 @@ void Status::InternalSwap(Status* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Status, full_)
-      + sizeof(Status::full_)
+      PROTOBUF_FIELD_OFFSET(Status, max_connections_)
+      + sizeof(Status::max_connections_)
       - PROTOBUF_FIELD_OFFSET(Status, timestamp_)>(
           reinterpret_cast<char*>(&timestamp_),
           reinterpret_cast<char*>(&other->timestamp_));

@@ -212,8 +212,8 @@ class Status PROTOBUF_FINAL :
 
   enum : int {
     kTimestampFieldNumber = 3,
-    kNumberConnectionsFieldNumber = 2,
-    kFullFieldNumber = 1,
+    kNumberConnectionsFieldNumber = 1,
+    kMaxConnectionsFieldNumber = 2,
   };
   // .google.protobuf.Timestamp timestamp = 3;
   bool has_timestamp() const;
@@ -233,7 +233,7 @@ class Status PROTOBUF_FINAL :
       PROTOBUF_NAMESPACE_ID::Timestamp* timestamp);
   PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_timestamp();
 
-  // uint64 number_connections = 2;
+  // uint64 number_connections = 1;
   void clear_number_connections();
   ::PROTOBUF_NAMESPACE_ID::uint64 number_connections() const;
   void set_number_connections(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -242,13 +242,13 @@ class Status PROTOBUF_FINAL :
   void _internal_set_number_connections(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // bool full = 1;
-  void clear_full();
-  bool full() const;
-  void set_full(bool value);
+  // uint64 max_connections = 2;
+  void clear_max_connections();
+  ::PROTOBUF_NAMESPACE_ID::uint64 max_connections() const;
+  void set_max_connections(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  bool _internal_full() const;
-  void _internal_set_full(bool value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_max_connections() const;
+  void _internal_set_max_connections(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:server.Status)
@@ -260,7 +260,7 @@ class Status PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   PROTOBUF_NAMESPACE_ID::Timestamp* timestamp_;
   ::PROTOBUF_NAMESPACE_ID::uint64 number_connections_;
-  bool full_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 max_connections_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_server_2eproto;
 };
@@ -482,27 +482,7 @@ class Message PROTOBUF_FINAL :
 #endif  // __GNUC__
 // Status
 
-// bool full = 1;
-inline void Status::clear_full() {
-  full_ = false;
-}
-inline bool Status::_internal_full() const {
-  return full_;
-}
-inline bool Status::full() const {
-  // @@protoc_insertion_point(field_get:server.Status.full)
-  return _internal_full();
-}
-inline void Status::_internal_set_full(bool value) {
-  
-  full_ = value;
-}
-inline void Status::set_full(bool value) {
-  _internal_set_full(value);
-  // @@protoc_insertion_point(field_set:server.Status.full)
-}
-
-// uint64 number_connections = 2;
+// uint64 number_connections = 1;
 inline void Status::clear_number_connections() {
   number_connections_ = PROTOBUF_ULONGLONG(0);
 }
@@ -520,6 +500,26 @@ inline void Status::_internal_set_number_connections(::PROTOBUF_NAMESPACE_ID::ui
 inline void Status::set_number_connections(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_number_connections(value);
   // @@protoc_insertion_point(field_set:server.Status.number_connections)
+}
+
+// uint64 max_connections = 2;
+inline void Status::clear_max_connections() {
+  max_connections_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Status::_internal_max_connections() const {
+  return max_connections_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Status::max_connections() const {
+  // @@protoc_insertion_point(field_get:server.Status.max_connections)
+  return _internal_max_connections();
+}
+inline void Status::_internal_set_max_connections(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  max_connections_ = value;
+}
+inline void Status::set_max_connections(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_max_connections(value);
+  // @@protoc_insertion_point(field_set:server.Status.max_connections)
 }
 
 // .google.protobuf.Timestamp timestamp = 3;
