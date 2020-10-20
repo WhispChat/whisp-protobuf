@@ -9,8 +9,3 @@ message Message {
   string content = 2;
   google.protobuf.Timestamp timestamp = 3;
 }
-
-message Command {
-  string type = 1;
-  repeated string args = 2;
-}

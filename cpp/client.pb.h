@@ -48,7 +48,7 @@ struct TableStruct_client_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,15 +56,11 @@ struct TableStruct_client_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_client_2eproto;
 namespace client {
-class Command;
-class CommandDefaultTypeInternal;
-extern CommandDefaultTypeInternal _Command_default_instance_;
 class Message;
 class MessageDefaultTypeInternal;
 extern MessageDefaultTypeInternal _Message_default_instance_;
 }  // namespace client
 PROTOBUF_NAMESPACE_OPEN
-template<> ::client::Command* Arena::CreateMaybeMessage<::client::Command>(Arena*);
 template<> ::client::Message* Arena::CreateMaybeMessage<::client::Message>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace client {
@@ -248,176 +244,6 @@ class Message PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr username_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
   PROTOBUF_NAMESPACE_ID::Timestamp* timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_client_2eproto;
-};
-// -------------------------------------------------------------------
-
-class Command PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:client.Command) */ {
- public:
-  inline Command() : Command(nullptr) {}
-  virtual ~Command();
-
-  Command(const Command& from);
-  Command(Command&& from) noexcept
-    : Command() {
-    *this = ::std::move(from);
-  }
-
-  inline Command& operator=(const Command& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Command& operator=(Command&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const Command& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Command* internal_default_instance() {
-    return reinterpret_cast<const Command*>(
-               &_Command_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(Command& a, Command& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Command* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Command* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Command* New() const final {
-    return CreateMaybeMessage<Command>(nullptr);
-  }
-
-  Command* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Command>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Command& from);
-  void MergeFrom(const Command& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Command* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "client.Command";
-  }
-  protected:
-  explicit Command(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_client_2eproto);
-    return ::descriptor_table_client_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kArgsFieldNumber = 2,
-    kTypeFieldNumber = 1,
-  };
-  // repeated string args = 2;
-  int args_size() const;
-  private:
-  int _internal_args_size() const;
-  public:
-  void clear_args();
-  const std::string& args(int index) const;
-  std::string* mutable_args(int index);
-  void set_args(int index, const std::string& value);
-  void set_args(int index, std::string&& value);
-  void set_args(int index, const char* value);
-  void set_args(int index, const char* value, size_t size);
-  std::string* add_args();
-  void add_args(const std::string& value);
-  void add_args(std::string&& value);
-  void add_args(const char* value);
-  void add_args(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& args() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_args();
-  private:
-  const std::string& _internal_args(int index) const;
-  std::string* _internal_add_args();
-  public:
-
-  // string type = 1;
-  void clear_type();
-  const std::string& type() const;
-  void set_type(const std::string& value);
-  void set_type(std::string&& value);
-  void set_type(const char* value);
-  void set_type(const char* value, size_t size);
-  std::string* mutable_type();
-  std::string* release_type();
-  void set_allocated_type(std::string* type);
-  private:
-  const std::string& _internal_type() const;
-  void _internal_set_type(const std::string& value);
-  std::string* _internal_mutable_type();
-  public:
-
-  // @@protoc_insertion_point(class_scope:client.Command)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> args_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_client_2eproto;
 };
@@ -633,151 +459,9 @@ inline void Message::set_allocated_timestamp(PROTOBUF_NAMESPACE_ID::Timestamp* t
   // @@protoc_insertion_point(field_set_allocated:client.Message.timestamp)
 }
 
-// -------------------------------------------------------------------
-
-// Command
-
-// string type = 1;
-inline void Command::clear_type() {
-  type_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline const std::string& Command::type() const {
-  // @@protoc_insertion_point(field_get:client.Command.type)
-  return _internal_type();
-}
-inline void Command::set_type(const std::string& value) {
-  _internal_set_type(value);
-  // @@protoc_insertion_point(field_set:client.Command.type)
-}
-inline std::string* Command::mutable_type() {
-  // @@protoc_insertion_point(field_mutable:client.Command.type)
-  return _internal_mutable_type();
-}
-inline const std::string& Command::_internal_type() const {
-  return type_.Get();
-}
-inline void Command::_internal_set_type(const std::string& value) {
-  
-  type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void Command::set_type(std::string&& value) {
-  
-  type_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:client.Command.type)
-}
-inline void Command::set_type(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:client.Command.type)
-}
-inline void Command::set_type(const char* value,
-    size_t size) {
-  
-  type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:client.Command.type)
-}
-inline std::string* Command::_internal_mutable_type() {
-  
-  return type_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* Command::release_type() {
-  // @@protoc_insertion_point(field_release:client.Command.type)
-  return type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void Command::set_allocated_type(std::string* type) {
-  if (type != nullptr) {
-    
-  } else {
-    
-  }
-  type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), type,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:client.Command.type)
-}
-
-// repeated string args = 2;
-inline int Command::_internal_args_size() const {
-  return args_.size();
-}
-inline int Command::args_size() const {
-  return _internal_args_size();
-}
-inline void Command::clear_args() {
-  args_.Clear();
-}
-inline std::string* Command::add_args() {
-  // @@protoc_insertion_point(field_add_mutable:client.Command.args)
-  return _internal_add_args();
-}
-inline const std::string& Command::_internal_args(int index) const {
-  return args_.Get(index);
-}
-inline const std::string& Command::args(int index) const {
-  // @@protoc_insertion_point(field_get:client.Command.args)
-  return _internal_args(index);
-}
-inline std::string* Command::mutable_args(int index) {
-  // @@protoc_insertion_point(field_mutable:client.Command.args)
-  return args_.Mutable(index);
-}
-inline void Command::set_args(int index, const std::string& value) {
-  // @@protoc_insertion_point(field_set:client.Command.args)
-  args_.Mutable(index)->assign(value);
-}
-inline void Command::set_args(int index, std::string&& value) {
-  // @@protoc_insertion_point(field_set:client.Command.args)
-  args_.Mutable(index)->assign(std::move(value));
-}
-inline void Command::set_args(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  args_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:client.Command.args)
-}
-inline void Command::set_args(int index, const char* value, size_t size) {
-  args_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:client.Command.args)
-}
-inline std::string* Command::_internal_add_args() {
-  return args_.Add();
-}
-inline void Command::add_args(const std::string& value) {
-  args_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:client.Command.args)
-}
-inline void Command::add_args(std::string&& value) {
-  args_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:client.Command.args)
-}
-inline void Command::add_args(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  args_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:client.Command.args)
-}
-inline void Command::add_args(const char* value, size_t size) {
-  args_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:client.Command.args)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-Command::args() const {
-  // @@protoc_insertion_point(field_list:client.Command.args)
-  return args_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-Command::mutable_args() {
-  // @@protoc_insertion_point(field_mutable_list:client.Command.args)
-  return &args_;
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 
