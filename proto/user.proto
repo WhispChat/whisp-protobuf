@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package user;
+
+message RegisteredUser {
+  string username = 1;
+  string email = 2;
+}
+
+message GuestUser { string username = 1; }
