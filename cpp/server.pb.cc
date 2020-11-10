@@ -24,6 +24,10 @@ class MessageDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Message> _instance;
 } _Message_default_instance_;
+class ServerClosedDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ServerClosed> _instance;
+} _ServerClosed_default_instance_;
 }  // namespace server
 static void InitDefaultsscc_info_Message_server_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -40,6 +44,20 @@ static void InitDefaultsscc_info_Message_server_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Message_server_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
+static void InitDefaultsscc_info_ServerClosed_server_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::server::_ServerClosed_default_instance_;
+    new (ptr) ::server::ServerClosed();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::server::ServerClosed::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ServerClosed_server_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ServerClosed_server_2eproto}, {}};
+
 static void InitDefaultsscc_info_Status_server_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -55,7 +73,7 @@ static void InitDefaultsscc_info_Status_server_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Status_server_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_server_2eproto[2];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_server_2eproto[3];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_server_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_server_2eproto = nullptr;
 
@@ -76,15 +94,22 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_server_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::server::Message, type_),
   PROTOBUF_FIELD_OFFSET(::server::Message, content_),
   PROTOBUF_FIELD_OFFSET(::server::Message, timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::server::ServerClosed, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::server::Status)},
   { 8, -1, sizeof(::server::Message)},
+  { 16, -1, sizeof(::server::ServerClosed)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::server::_Status_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::server::_Message_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::server::_ServerClosed_default_instance_),
 };
 
 const char descriptor_table_protodef_server_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -96,21 +121,22 @@ const char descriptor_table_protodef_server_2eproto[] PROTOBUF_SECTION_VARIABLE(
   ".Message.MessageType\022\017\n\007content\030\002 \001(\t\022-\n"
   "\ttimestamp\030\003 \001(\0132\032.google.protobuf.Times"
   "tamp\"-\n\013MessageType\022\010\n\004INFO\020\000\022\t\n\005ERROR\020\001"
-  "\022\t\n\005DEBUG\020\002b\006proto3"
+  "\022\t\n\005DEBUG\020\002\"\016\n\014ServerClosedb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_server_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_server_2eproto_sccs[2] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_server_2eproto_sccs[3] = {
   &scc_info_Message_server_2eproto.base,
+  &scc_info_ServerClosed_server_2eproto.base,
   &scc_info_Status_server_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_server_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_server_2eproto = {
-  false, false, descriptor_table_protodef_server_2eproto, "server.proto", 339,
-  &descriptor_table_server_2eproto_once, descriptor_table_server_2eproto_sccs, descriptor_table_server_2eproto_deps, 2, 1,
+  false, false, descriptor_table_protodef_server_2eproto, "server.proto", 355,
+  &descriptor_table_server_2eproto_once, descriptor_table_server_2eproto_sccs, descriptor_table_server_2eproto_deps, 3, 1,
   schemas, file_default_instances, TableStruct_server_2eproto::offsets,
-  file_level_metadata_server_2eproto, 2, file_level_enum_descriptors_server_2eproto, file_level_service_descriptors_server_2eproto,
+  file_level_metadata_server_2eproto, 3, file_level_enum_descriptors_server_2eproto, file_level_service_descriptors_server_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -712,6 +738,171 @@ void Message::InternalSwap(Message* other) {
 }
 
 
+// ===================================================================
+
+void ServerClosed::InitAsDefaultInstance() {
+}
+class ServerClosed::_Internal {
+ public:
+};
+
+ServerClosed::ServerClosed(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:server.ServerClosed)
+}
+ServerClosed::ServerClosed(const ServerClosed& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:server.ServerClosed)
+}
+
+void ServerClosed::SharedCtor() {
+}
+
+ServerClosed::~ServerClosed() {
+  // @@protoc_insertion_point(destructor:server.ServerClosed)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ServerClosed::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void ServerClosed::ArenaDtor(void* object) {
+  ServerClosed* _this = reinterpret_cast< ServerClosed* >(object);
+  (void)_this;
+}
+void ServerClosed::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ServerClosed::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ServerClosed& ServerClosed::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ServerClosed_server_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ServerClosed::Clear() {
+// @@protoc_insertion_point(message_clear_start:server.ServerClosed)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ServerClosed::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ServerClosed::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:server.ServerClosed)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:server.ServerClosed)
+  return target;
+}
+
+size_t ServerClosed::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:server.ServerClosed)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ServerClosed::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:server.ServerClosed)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ServerClosed* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ServerClosed>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:server.ServerClosed)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:server.ServerClosed)
+    MergeFrom(*source);
+  }
+}
+
+void ServerClosed::MergeFrom(const ServerClosed& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:server.ServerClosed)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void ServerClosed::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:server.ServerClosed)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ServerClosed::CopyFrom(const ServerClosed& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:server.ServerClosed)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ServerClosed::IsInitialized() const {
+  return true;
+}
+
+void ServerClosed::InternalSwap(ServerClosed* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ServerClosed::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace server
 PROTOBUF_NAMESPACE_OPEN
@@ -720,6 +911,9 @@ template<> PROTOBUF_NOINLINE ::server::Status* Arena::CreateMaybeMessage< ::serv
 }
 template<> PROTOBUF_NOINLINE ::server::Message* Arena::CreateMaybeMessage< ::server::Message >(Arena* arena) {
   return Arena::CreateMessageInternal< ::server::Message >(arena);
+}
+template<> PROTOBUF_NOINLINE ::server::ServerClosed* Arena::CreateMaybeMessage< ::server::ServerClosed >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::server::ServerClosed >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
