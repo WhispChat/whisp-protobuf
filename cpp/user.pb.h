@@ -32,6 +32,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_user_2eproto
@@ -47,7 +48,7 @@ struct TableStruct_user_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -58,12 +59,16 @@ namespace user {
 class GuestUser;
 class GuestUserDefaultTypeInternal;
 extern GuestUserDefaultTypeInternal _GuestUser_default_instance_;
+class PrivateMessage;
+class PrivateMessageDefaultTypeInternal;
+extern PrivateMessageDefaultTypeInternal _PrivateMessage_default_instance_;
 class RegisteredUser;
 class RegisteredUserDefaultTypeInternal;
 extern RegisteredUserDefaultTypeInternal _RegisteredUser_default_instance_;
 }  // namespace user
 PROTOBUF_NAMESPACE_OPEN
 template<> ::user::GuestUser* Arena::CreateMaybeMessage<::user::GuestUser>(Arena*);
+template<> ::user::PrivateMessage* Arena::CreateMaybeMessage<::user::PrivateMessage>(Arena*);
 template<> ::user::RegisteredUser* Arena::CreateMaybeMessage<::user::RegisteredUser>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace user {
@@ -374,6 +379,228 @@ class GuestUser PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_user_2eproto;
 };
+// -------------------------------------------------------------------
+
+class PrivateMessage PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:user.PrivateMessage) */ {
+ public:
+  inline PrivateMessage() : PrivateMessage(nullptr) {}
+  virtual ~PrivateMessage();
+
+  PrivateMessage(const PrivateMessage& from);
+  PrivateMessage(PrivateMessage&& from) noexcept
+    : PrivateMessage() {
+    *this = ::std::move(from);
+  }
+
+  inline PrivateMessage& operator=(const PrivateMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PrivateMessage& operator=(PrivateMessage&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PrivateMessage& default_instance();
+
+  enum FromUserCase {
+    kRegisteredUser = 1,
+    kGuestUser = 2,
+    FROM_USER_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PrivateMessage* internal_default_instance() {
+    return reinterpret_cast<const PrivateMessage*>(
+               &_PrivateMessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(PrivateMessage& a, PrivateMessage& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PrivateMessage* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PrivateMessage* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PrivateMessage* New() const final {
+    return CreateMaybeMessage<PrivateMessage>(nullptr);
+  }
+
+  PrivateMessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrivateMessage>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PrivateMessage& from);
+  void MergeFrom(const PrivateMessage& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PrivateMessage* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "user.PrivateMessage";
+  }
+  protected:
+  explicit PrivateMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_user_2eproto);
+    return ::descriptor_table_user_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kContentFieldNumber = 3,
+    kTimestampFieldNumber = 4,
+    kRegisteredUserFieldNumber = 1,
+    kGuestUserFieldNumber = 2,
+  };
+  // string content = 3;
+  void clear_content();
+  const std::string& content() const;
+  void set_content(const std::string& value);
+  void set_content(std::string&& value);
+  void set_content(const char* value);
+  void set_content(const char* value, size_t size);
+  std::string* mutable_content();
+  std::string* release_content();
+  void set_allocated_content(std::string* content);
+  private:
+  const std::string& _internal_content() const;
+  void _internal_set_content(const std::string& value);
+  std::string* _internal_mutable_content();
+  public:
+
+  // .google.protobuf.Timestamp timestamp = 4;
+  bool has_timestamp() const;
+  private:
+  bool _internal_has_timestamp() const;
+  public:
+  void clear_timestamp();
+  const PROTOBUF_NAMESPACE_ID::Timestamp& timestamp() const;
+  PROTOBUF_NAMESPACE_ID::Timestamp* release_timestamp();
+  PROTOBUF_NAMESPACE_ID::Timestamp* mutable_timestamp();
+  void set_allocated_timestamp(PROTOBUF_NAMESPACE_ID::Timestamp* timestamp);
+  private:
+  const PROTOBUF_NAMESPACE_ID::Timestamp& _internal_timestamp() const;
+  PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_timestamp();
+  public:
+  void unsafe_arena_set_allocated_timestamp(
+      PROTOBUF_NAMESPACE_ID::Timestamp* timestamp);
+  PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_timestamp();
+
+  // .user.RegisteredUser registered_user = 1;
+  bool has_registered_user() const;
+  private:
+  bool _internal_has_registered_user() const;
+  public:
+  void clear_registered_user();
+  const ::user::RegisteredUser& registered_user() const;
+  ::user::RegisteredUser* release_registered_user();
+  ::user::RegisteredUser* mutable_registered_user();
+  void set_allocated_registered_user(::user::RegisteredUser* registered_user);
+  private:
+  const ::user::RegisteredUser& _internal_registered_user() const;
+  ::user::RegisteredUser* _internal_mutable_registered_user();
+  public:
+  void unsafe_arena_set_allocated_registered_user(
+      ::user::RegisteredUser* registered_user);
+  ::user::RegisteredUser* unsafe_arena_release_registered_user();
+
+  // .user.GuestUser guest_user = 2;
+  bool has_guest_user() const;
+  private:
+  bool _internal_has_guest_user() const;
+  public:
+  void clear_guest_user();
+  const ::user::GuestUser& guest_user() const;
+  ::user::GuestUser* release_guest_user();
+  ::user::GuestUser* mutable_guest_user();
+  void set_allocated_guest_user(::user::GuestUser* guest_user);
+  private:
+  const ::user::GuestUser& _internal_guest_user() const;
+  ::user::GuestUser* _internal_mutable_guest_user();
+  public:
+  void unsafe_arena_set_allocated_guest_user(
+      ::user::GuestUser* guest_user);
+  ::user::GuestUser* unsafe_arena_release_guest_user();
+
+  void clear_from_user();
+  FromUserCase from_user_case() const;
+  // @@protoc_insertion_point(class_scope:user.PrivateMessage)
+ private:
+  class _Internal;
+  void set_has_registered_user();
+  void set_has_guest_user();
+
+  inline bool has_from_user() const;
+  inline void clear_has_from_user();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
+  PROTOBUF_NAMESPACE_ID::Timestamp* timestamp_;
+  union FromUserUnion {
+    FromUserUnion() {}
+    ::user::RegisteredUser* registered_user_;
+    ::user::GuestUser* guest_user_;
+  } from_user_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_user_2eproto;
+};
 // ===================================================================
 
 
@@ -575,9 +802,309 @@ inline void GuestUser::set_allocated_username(std::string* username) {
   // @@protoc_insertion_point(field_set_allocated:user.GuestUser.username)
 }
 
+// -------------------------------------------------------------------
+
+// PrivateMessage
+
+// .user.RegisteredUser registered_user = 1;
+inline bool PrivateMessage::_internal_has_registered_user() const {
+  return from_user_case() == kRegisteredUser;
+}
+inline bool PrivateMessage::has_registered_user() const {
+  return _internal_has_registered_user();
+}
+inline void PrivateMessage::set_has_registered_user() {
+  _oneof_case_[0] = kRegisteredUser;
+}
+inline void PrivateMessage::clear_registered_user() {
+  if (_internal_has_registered_user()) {
+    if (GetArena() == nullptr) {
+      delete from_user_.registered_user_;
+    }
+    clear_has_from_user();
+  }
+}
+inline ::user::RegisteredUser* PrivateMessage::release_registered_user() {
+  // @@protoc_insertion_point(field_release:user.PrivateMessage.registered_user)
+  if (_internal_has_registered_user()) {
+    clear_has_from_user();
+      ::user::RegisteredUser* temp = from_user_.registered_user_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    from_user_.registered_user_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::user::RegisteredUser& PrivateMessage::_internal_registered_user() const {
+  return _internal_has_registered_user()
+      ? *from_user_.registered_user_
+      : *reinterpret_cast< ::user::RegisteredUser*>(&::user::_RegisteredUser_default_instance_);
+}
+inline const ::user::RegisteredUser& PrivateMessage::registered_user() const {
+  // @@protoc_insertion_point(field_get:user.PrivateMessage.registered_user)
+  return _internal_registered_user();
+}
+inline ::user::RegisteredUser* PrivateMessage::unsafe_arena_release_registered_user() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:user.PrivateMessage.registered_user)
+  if (_internal_has_registered_user()) {
+    clear_has_from_user();
+    ::user::RegisteredUser* temp = from_user_.registered_user_;
+    from_user_.registered_user_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void PrivateMessage::unsafe_arena_set_allocated_registered_user(::user::RegisteredUser* registered_user) {
+  clear_from_user();
+  if (registered_user) {
+    set_has_registered_user();
+    from_user_.registered_user_ = registered_user;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user.PrivateMessage.registered_user)
+}
+inline ::user::RegisteredUser* PrivateMessage::_internal_mutable_registered_user() {
+  if (!_internal_has_registered_user()) {
+    clear_from_user();
+    set_has_registered_user();
+    from_user_.registered_user_ = CreateMaybeMessage< ::user::RegisteredUser >(GetArena());
+  }
+  return from_user_.registered_user_;
+}
+inline ::user::RegisteredUser* PrivateMessage::mutable_registered_user() {
+  // @@protoc_insertion_point(field_mutable:user.PrivateMessage.registered_user)
+  return _internal_mutable_registered_user();
+}
+
+// .user.GuestUser guest_user = 2;
+inline bool PrivateMessage::_internal_has_guest_user() const {
+  return from_user_case() == kGuestUser;
+}
+inline bool PrivateMessage::has_guest_user() const {
+  return _internal_has_guest_user();
+}
+inline void PrivateMessage::set_has_guest_user() {
+  _oneof_case_[0] = kGuestUser;
+}
+inline void PrivateMessage::clear_guest_user() {
+  if (_internal_has_guest_user()) {
+    if (GetArena() == nullptr) {
+      delete from_user_.guest_user_;
+    }
+    clear_has_from_user();
+  }
+}
+inline ::user::GuestUser* PrivateMessage::release_guest_user() {
+  // @@protoc_insertion_point(field_release:user.PrivateMessage.guest_user)
+  if (_internal_has_guest_user()) {
+    clear_has_from_user();
+      ::user::GuestUser* temp = from_user_.guest_user_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    from_user_.guest_user_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::user::GuestUser& PrivateMessage::_internal_guest_user() const {
+  return _internal_has_guest_user()
+      ? *from_user_.guest_user_
+      : *reinterpret_cast< ::user::GuestUser*>(&::user::_GuestUser_default_instance_);
+}
+inline const ::user::GuestUser& PrivateMessage::guest_user() const {
+  // @@protoc_insertion_point(field_get:user.PrivateMessage.guest_user)
+  return _internal_guest_user();
+}
+inline ::user::GuestUser* PrivateMessage::unsafe_arena_release_guest_user() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:user.PrivateMessage.guest_user)
+  if (_internal_has_guest_user()) {
+    clear_has_from_user();
+    ::user::GuestUser* temp = from_user_.guest_user_;
+    from_user_.guest_user_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void PrivateMessage::unsafe_arena_set_allocated_guest_user(::user::GuestUser* guest_user) {
+  clear_from_user();
+  if (guest_user) {
+    set_has_guest_user();
+    from_user_.guest_user_ = guest_user;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user.PrivateMessage.guest_user)
+}
+inline ::user::GuestUser* PrivateMessage::_internal_mutable_guest_user() {
+  if (!_internal_has_guest_user()) {
+    clear_from_user();
+    set_has_guest_user();
+    from_user_.guest_user_ = CreateMaybeMessage< ::user::GuestUser >(GetArena());
+  }
+  return from_user_.guest_user_;
+}
+inline ::user::GuestUser* PrivateMessage::mutable_guest_user() {
+  // @@protoc_insertion_point(field_mutable:user.PrivateMessage.guest_user)
+  return _internal_mutable_guest_user();
+}
+
+// string content = 3;
+inline void PrivateMessage::clear_content() {
+  content_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& PrivateMessage::content() const {
+  // @@protoc_insertion_point(field_get:user.PrivateMessage.content)
+  return _internal_content();
+}
+inline void PrivateMessage::set_content(const std::string& value) {
+  _internal_set_content(value);
+  // @@protoc_insertion_point(field_set:user.PrivateMessage.content)
+}
+inline std::string* PrivateMessage::mutable_content() {
+  // @@protoc_insertion_point(field_mutable:user.PrivateMessage.content)
+  return _internal_mutable_content();
+}
+inline const std::string& PrivateMessage::_internal_content() const {
+  return content_.Get();
+}
+inline void PrivateMessage::_internal_set_content(const std::string& value) {
+  
+  content_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void PrivateMessage::set_content(std::string&& value) {
+  
+  content_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:user.PrivateMessage.content)
+}
+inline void PrivateMessage::set_content(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  content_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:user.PrivateMessage.content)
+}
+inline void PrivateMessage::set_content(const char* value,
+    size_t size) {
+  
+  content_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:user.PrivateMessage.content)
+}
+inline std::string* PrivateMessage::_internal_mutable_content() {
+  
+  return content_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* PrivateMessage::release_content() {
+  // @@protoc_insertion_point(field_release:user.PrivateMessage.content)
+  return content_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void PrivateMessage::set_allocated_content(std::string* content) {
+  if (content != nullptr) {
+    
+  } else {
+    
+  }
+  content_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), content,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:user.PrivateMessage.content)
+}
+
+// .google.protobuf.Timestamp timestamp = 4;
+inline bool PrivateMessage::_internal_has_timestamp() const {
+  return this != internal_default_instance() && timestamp_ != nullptr;
+}
+inline bool PrivateMessage::has_timestamp() const {
+  return _internal_has_timestamp();
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& PrivateMessage::_internal_timestamp() const {
+  const PROTOBUF_NAMESPACE_ID::Timestamp* p = timestamp_;
+  return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      &PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& PrivateMessage::timestamp() const {
+  // @@protoc_insertion_point(field_get:user.PrivateMessage.timestamp)
+  return _internal_timestamp();
+}
+inline void PrivateMessage::unsafe_arena_set_allocated_timestamp(
+    PROTOBUF_NAMESPACE_ID::Timestamp* timestamp) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(timestamp_);
+  }
+  timestamp_ = timestamp;
+  if (timestamp) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user.PrivateMessage.timestamp)
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* PrivateMessage::release_timestamp() {
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = timestamp_;
+  timestamp_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* PrivateMessage::unsafe_arena_release_timestamp() {
+  // @@protoc_insertion_point(field_release:user.PrivateMessage.timestamp)
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = timestamp_;
+  timestamp_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* PrivateMessage::_internal_mutable_timestamp() {
+  
+  if (timestamp_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArena());
+    timestamp_ = p;
+  }
+  return timestamp_;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* PrivateMessage::mutable_timestamp() {
+  // @@protoc_insertion_point(field_mutable:user.PrivateMessage.timestamp)
+  return _internal_mutable_timestamp();
+}
+inline void PrivateMessage::set_allocated_timestamp(PROTOBUF_NAMESPACE_ID::Timestamp* timestamp) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(timestamp_);
+  }
+  if (timestamp) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(timestamp)->GetArena();
+    if (message_arena != submessage_arena) {
+      timestamp = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, timestamp, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  timestamp_ = timestamp;
+  // @@protoc_insertion_point(field_set_allocated:user.PrivateMessage.timestamp)
+}
+
+inline bool PrivateMessage::has_from_user() const {
+  return from_user_case() != FROM_USER_NOT_SET;
+}
+inline void PrivateMessage::clear_has_from_user() {
+  _oneof_case_[0] = FROM_USER_NOT_SET;
+}
+inline PrivateMessage::FromUserCase PrivateMessage::from_user_case() const {
+  return PrivateMessage::FromUserCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 
