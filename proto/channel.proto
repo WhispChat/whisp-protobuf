@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package channel;
+
+message UserList { repeated string username = 1; }
+message UserJoined { string username = 1; }
+message UserLeft { string username = 1; }
