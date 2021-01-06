@@ -26,12 +26,18 @@ class GuestUserDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GuestUser> _instance;
 } _GuestUser_default_instance_;
-class PrivateMessageDefaultTypeInternal {
+class PrivateMessageInDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrivateMessage> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrivateMessageIn> _instance;
   const ::user::RegisteredUser* registered_user_;
   const ::user::GuestUser* guest_user_;
-} _PrivateMessage_default_instance_;
+} _PrivateMessageIn_default_instance_;
+class PrivateMessageOutDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrivateMessageOut> _instance;
+  const ::user::RegisteredUser* registered_user_;
+  const ::user::GuestUser* guest_user_;
+} _PrivateMessageOut_default_instance_;
 }  // namespace user
 static void InitDefaultsscc_info_GuestUser_user_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -47,19 +53,36 @@ static void InitDefaultsscc_info_GuestUser_user_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GuestUser_user_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GuestUser_user_2eproto}, {}};
 
-static void InitDefaultsscc_info_PrivateMessage_user_2eproto() {
+static void InitDefaultsscc_info_PrivateMessageIn_user_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::user::_PrivateMessage_default_instance_;
-    new (ptr) ::user::PrivateMessage();
+    void* ptr = &::user::_PrivateMessageIn_default_instance_;
+    new (ptr) ::user::PrivateMessageIn();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::user::PrivateMessage::InitAsDefaultInstance();
+  ::user::PrivateMessageIn::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_PrivateMessage_user_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_PrivateMessage_user_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_PrivateMessageIn_user_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_PrivateMessageIn_user_2eproto}, {
+      &scc_info_RegisteredUser_user_2eproto.base,
+      &scc_info_GuestUser_user_2eproto.base,
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsscc_info_PrivateMessageOut_user_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::user::_PrivateMessageOut_default_instance_;
+    new (ptr) ::user::PrivateMessageOut();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::user::PrivateMessageOut::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_PrivateMessageOut_user_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_PrivateMessageOut_user_2eproto}, {
       &scc_info_RegisteredUser_user_2eproto.base,
       &scc_info_GuestUser_user_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -78,7 +101,7 @@ static void InitDefaultsscc_info_RegisteredUser_user_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegisteredUser_user_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RegisteredUser_user_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_user_2eproto[3];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_user_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_user_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_user_2eproto = nullptr;
 
@@ -97,53 +120,70 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_user_2eproto::offsets[] PROTOB
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::user::GuestUser, username_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::user::PrivateMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageIn, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::user::PrivateMessage, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageIn, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  offsetof(::user::PrivateMessageDefaultTypeInternal, registered_user_),
-  offsetof(::user::PrivateMessageDefaultTypeInternal, guest_user_),
-  PROTOBUF_FIELD_OFFSET(::user::PrivateMessage, content_),
-  PROTOBUF_FIELD_OFFSET(::user::PrivateMessage, timestamp_),
-  PROTOBUF_FIELD_OFFSET(::user::PrivateMessage, from_user_),
+  offsetof(::user::PrivateMessageInDefaultTypeInternal, registered_user_),
+  offsetof(::user::PrivateMessageInDefaultTypeInternal, guest_user_),
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageIn, content_),
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageIn, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageIn, from_user_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageOut, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageOut, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  offsetof(::user::PrivateMessageOutDefaultTypeInternal, registered_user_),
+  offsetof(::user::PrivateMessageOutDefaultTypeInternal, guest_user_),
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageOut, content_),
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageOut, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::user::PrivateMessageOut, to_user_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::user::RegisteredUser)},
   { 7, -1, sizeof(::user::GuestUser)},
-  { 13, -1, sizeof(::user::PrivateMessage)},
+  { 13, -1, sizeof(::user::PrivateMessageIn)},
+  { 23, -1, sizeof(::user::PrivateMessageOut)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::user::_RegisteredUser_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::user::_GuestUser_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::user::_PrivateMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::user::_PrivateMessageIn_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::user::_PrivateMessageOut_default_instance_),
 };
 
 const char descriptor_table_protodef_user_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\nuser.proto\022\004user\032\037google/protobuf/time"
   "stamp.proto\"1\n\016RegisteredUser\022\020\n\010usernam"
   "e\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\"\035\n\tGuestUser\022\020\n\010u"
-  "sername\030\001 \001(\t\"\265\001\n\016PrivateMessage\022/\n\017regi"
-  "stered_user\030\001 \001(\0132\024.user.RegisteredUserH"
-  "\000\022%\n\nguest_user\030\002 \001(\0132\017.user.GuestUserH\000"
-  "\022\017\n\007content\030\003 \001(\t\022-\n\ttimestamp\030\004 \001(\0132\032.g"
-  "oogle.protobuf.TimestampB\013\n\tfrom_userb\006p"
-  "roto3"
+  "sername\030\001 \001(\t\"\267\001\n\020PrivateMessageIn\022/\n\017re"
+  "gistered_user\030\001 \001(\0132\024.user.RegisteredUse"
+  "rH\000\022%\n\nguest_user\030\002 \001(\0132\017.user.GuestUser"
+  "H\000\022\017\n\007content\030\003 \001(\t\022-\n\ttimestamp\030\004 \001(\0132\032"
+  ".google.protobuf.TimestampB\013\n\tfrom_user\""
+  "\266\001\n\021PrivateMessageOut\022/\n\017registered_user"
+  "\030\001 \001(\0132\024.user.RegisteredUserH\000\022%\n\nguest_"
+  "user\030\002 \001(\0132\017.user.GuestUserH\000\022\017\n\007content"
+  "\030\003 \001(\t\022-\n\ttimestamp\030\004 \001(\0132\032.google.proto"
+  "buf.TimestampB\t\n\007to_userb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_user_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_user_2eproto_sccs[3] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_user_2eproto_sccs[4] = {
   &scc_info_GuestUser_user_2eproto.base,
-  &scc_info_PrivateMessage_user_2eproto.base,
+  &scc_info_PrivateMessageIn_user_2eproto.base,
+  &scc_info_PrivateMessageOut_user_2eproto.base,
   &scc_info_RegisteredUser_user_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_user_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_user_2eproto = {
-  false, false, descriptor_table_protodef_user_2eproto, "user.proto", 325,
-  &descriptor_table_user_2eproto_once, descriptor_table_user_2eproto_sccs, descriptor_table_user_2eproto_deps, 3, 1,
+  false, false, descriptor_table_protodef_user_2eproto, "user.proto", 512,
+  &descriptor_table_user_2eproto_once, descriptor_table_user_2eproto_sccs, descriptor_table_user_2eproto_deps, 4, 1,
   schemas, file_default_instances, TableStruct_user_2eproto::offsets,
-  file_level_metadata_user_2eproto, 3, file_level_enum_descriptors_user_2eproto, file_level_service_descriptors_user_2eproto,
+  file_level_metadata_user_2eproto, 4, file_level_enum_descriptors_user_2eproto, file_level_service_descriptors_user_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -608,34 +648,34 @@ void GuestUser::InternalSwap(GuestUser* other) {
 
 // ===================================================================
 
-void PrivateMessage::InitAsDefaultInstance() {
-  ::user::_PrivateMessage_default_instance_.registered_user_ = const_cast< ::user::RegisteredUser*>(
+void PrivateMessageIn::InitAsDefaultInstance() {
+  ::user::_PrivateMessageIn_default_instance_.registered_user_ = const_cast< ::user::RegisteredUser*>(
       ::user::RegisteredUser::internal_default_instance());
-  ::user::_PrivateMessage_default_instance_.guest_user_ = const_cast< ::user::GuestUser*>(
+  ::user::_PrivateMessageIn_default_instance_.guest_user_ = const_cast< ::user::GuestUser*>(
       ::user::GuestUser::internal_default_instance());
-  ::user::_PrivateMessage_default_instance_._instance.get_mutable()->timestamp_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+  ::user::_PrivateMessageIn_default_instance_._instance.get_mutable()->timestamp_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
       PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
 }
-class PrivateMessage::_Internal {
+class PrivateMessageIn::_Internal {
  public:
-  static const ::user::RegisteredUser& registered_user(const PrivateMessage* msg);
-  static const ::user::GuestUser& guest_user(const PrivateMessage* msg);
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const PrivateMessage* msg);
+  static const ::user::RegisteredUser& registered_user(const PrivateMessageIn* msg);
+  static const ::user::GuestUser& guest_user(const PrivateMessageIn* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const PrivateMessageIn* msg);
 };
 
 const ::user::RegisteredUser&
-PrivateMessage::_Internal::registered_user(const PrivateMessage* msg) {
+PrivateMessageIn::_Internal::registered_user(const PrivateMessageIn* msg) {
   return *msg->from_user_.registered_user_;
 }
 const ::user::GuestUser&
-PrivateMessage::_Internal::guest_user(const PrivateMessage* msg) {
+PrivateMessageIn::_Internal::guest_user(const PrivateMessageIn* msg) {
   return *msg->from_user_.guest_user_;
 }
 const PROTOBUF_NAMESPACE_ID::Timestamp&
-PrivateMessage::_Internal::timestamp(const PrivateMessage* msg) {
+PrivateMessageIn::_Internal::timestamp(const PrivateMessageIn* msg) {
   return *msg->timestamp_;
 }
-void PrivateMessage::set_allocated_registered_user(::user::RegisteredUser* registered_user) {
+void PrivateMessageIn::set_allocated_registered_user(::user::RegisteredUser* registered_user) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_from_user();
   if (registered_user) {
@@ -648,9 +688,9 @@ void PrivateMessage::set_allocated_registered_user(::user::RegisteredUser* regis
     set_has_registered_user();
     from_user_.registered_user_ = registered_user;
   }
-  // @@protoc_insertion_point(field_set_allocated:user.PrivateMessage.registered_user)
+  // @@protoc_insertion_point(field_set_allocated:user.PrivateMessageIn.registered_user)
 }
-void PrivateMessage::set_allocated_guest_user(::user::GuestUser* guest_user) {
+void PrivateMessageIn::set_allocated_guest_user(::user::GuestUser* guest_user) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_from_user();
   if (guest_user) {
@@ -663,21 +703,21 @@ void PrivateMessage::set_allocated_guest_user(::user::GuestUser* guest_user) {
     set_has_guest_user();
     from_user_.guest_user_ = guest_user;
   }
-  // @@protoc_insertion_point(field_set_allocated:user.PrivateMessage.guest_user)
+  // @@protoc_insertion_point(field_set_allocated:user.PrivateMessageIn.guest_user)
 }
-void PrivateMessage::clear_timestamp() {
+void PrivateMessageIn::clear_timestamp() {
   if (GetArena() == nullptr && timestamp_ != nullptr) {
     delete timestamp_;
   }
   timestamp_ = nullptr;
 }
-PrivateMessage::PrivateMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+PrivateMessageIn::PrivateMessageIn(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:user.PrivateMessage)
+  // @@protoc_insertion_point(arena_constructor:user.PrivateMessageIn)
 }
-PrivateMessage::PrivateMessage(const PrivateMessage& from)
+PrivateMessageIn::PrivateMessageIn(const PrivateMessageIn& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   content_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -704,23 +744,23 @@ PrivateMessage::PrivateMessage(const PrivateMessage& from)
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:user.PrivateMessage)
+  // @@protoc_insertion_point(copy_constructor:user.PrivateMessageIn)
 }
 
-void PrivateMessage::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrivateMessage_user_2eproto.base);
+void PrivateMessageIn::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrivateMessageIn_user_2eproto.base);
   content_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   timestamp_ = nullptr;
   clear_has_from_user();
 }
 
-PrivateMessage::~PrivateMessage() {
-  // @@protoc_insertion_point(destructor:user.PrivateMessage)
+PrivateMessageIn::~PrivateMessageIn() {
+  // @@protoc_insertion_point(destructor:user.PrivateMessageIn)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void PrivateMessage::SharedDtor() {
+void PrivateMessageIn::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   content_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete timestamp_;
@@ -729,23 +769,23 @@ void PrivateMessage::SharedDtor() {
   }
 }
 
-void PrivateMessage::ArenaDtor(void* object) {
-  PrivateMessage* _this = reinterpret_cast< PrivateMessage* >(object);
+void PrivateMessageIn::ArenaDtor(void* object) {
+  PrivateMessageIn* _this = reinterpret_cast< PrivateMessageIn* >(object);
   (void)_this;
 }
-void PrivateMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void PrivateMessageIn::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void PrivateMessage::SetCachedSize(int size) const {
+void PrivateMessageIn::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PrivateMessage& PrivateMessage::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrivateMessage_user_2eproto.base);
+const PrivateMessageIn& PrivateMessageIn::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrivateMessageIn_user_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void PrivateMessage::clear_from_user() {
-// @@protoc_insertion_point(one_of_clear_start:user.PrivateMessage)
+void PrivateMessageIn::clear_from_user() {
+// @@protoc_insertion_point(one_of_clear_start:user.PrivateMessageIn)
   switch (from_user_case()) {
     case kRegisteredUser: {
       if (GetArena() == nullptr) {
@@ -767,8 +807,8 @@ void PrivateMessage::clear_from_user() {
 }
 
 
-void PrivateMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:user.PrivateMessage)
+void PrivateMessageIn::Clear() {
+// @@protoc_insertion_point(message_clear_start:user.PrivateMessageIn)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -782,7 +822,7 @@ void PrivateMessage::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PrivateMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PrivateMessageIn::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -809,7 +849,7 @@ const char* PrivateMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_content();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.PrivateMessage.content"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.PrivateMessageIn.content"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -842,9 +882,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PrivateMessage::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* PrivateMessageIn::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:user.PrivateMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:user.PrivateMessageIn)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -869,7 +909,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "user.PrivateMessage.content");
+      "user.PrivateMessageIn.content");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_content(), target);
   }
@@ -886,12 +926,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:user.PrivateMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:user.PrivateMessageIn)
   return target;
 }
 
-size_t PrivateMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:user.PrivateMessage)
+size_t PrivateMessageIn::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user.PrivateMessageIn)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -940,23 +980,23 @@ size_t PrivateMessage::ByteSizeLong() const {
   return total_size;
 }
 
-void PrivateMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:user.PrivateMessage)
+void PrivateMessageIn::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:user.PrivateMessageIn)
   GOOGLE_DCHECK_NE(&from, this);
-  const PrivateMessage* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrivateMessage>(
+  const PrivateMessageIn* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrivateMessageIn>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:user.PrivateMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:user.PrivateMessageIn)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:user.PrivateMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:user.PrivateMessageIn)
     MergeFrom(*source);
   }
 }
 
-void PrivateMessage::MergeFrom(const PrivateMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:user.PrivateMessage)
+void PrivateMessageIn::MergeFrom(const PrivateMessageIn& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:user.PrivateMessageIn)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -983,25 +1023,25 @@ void PrivateMessage::MergeFrom(const PrivateMessage& from) {
   }
 }
 
-void PrivateMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:user.PrivateMessage)
+void PrivateMessageIn::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:user.PrivateMessageIn)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PrivateMessage::CopyFrom(const PrivateMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:user.PrivateMessage)
+void PrivateMessageIn::CopyFrom(const PrivateMessageIn& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user.PrivateMessageIn)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PrivateMessage::IsInitialized() const {
+bool PrivateMessageIn::IsInitialized() const {
   return true;
 }
 
-void PrivateMessage::InternalSwap(PrivateMessage* other) {
+void PrivateMessageIn::InternalSwap(PrivateMessageIn* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   content_.Swap(&other->content_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
@@ -1010,7 +1050,416 @@ void PrivateMessage::InternalSwap(PrivateMessage* other) {
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PrivateMessage::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PrivateMessageIn::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void PrivateMessageOut::InitAsDefaultInstance() {
+  ::user::_PrivateMessageOut_default_instance_.registered_user_ = const_cast< ::user::RegisteredUser*>(
+      ::user::RegisteredUser::internal_default_instance());
+  ::user::_PrivateMessageOut_default_instance_.guest_user_ = const_cast< ::user::GuestUser*>(
+      ::user::GuestUser::internal_default_instance());
+  ::user::_PrivateMessageOut_default_instance_._instance.get_mutable()->timestamp_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
+class PrivateMessageOut::_Internal {
+ public:
+  static const ::user::RegisteredUser& registered_user(const PrivateMessageOut* msg);
+  static const ::user::GuestUser& guest_user(const PrivateMessageOut* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const PrivateMessageOut* msg);
+};
+
+const ::user::RegisteredUser&
+PrivateMessageOut::_Internal::registered_user(const PrivateMessageOut* msg) {
+  return *msg->to_user_.registered_user_;
+}
+const ::user::GuestUser&
+PrivateMessageOut::_Internal::guest_user(const PrivateMessageOut* msg) {
+  return *msg->to_user_.guest_user_;
+}
+const PROTOBUF_NAMESPACE_ID::Timestamp&
+PrivateMessageOut::_Internal::timestamp(const PrivateMessageOut* msg) {
+  return *msg->timestamp_;
+}
+void PrivateMessageOut::set_allocated_registered_user(::user::RegisteredUser* registered_user) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_to_user();
+  if (registered_user) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(registered_user);
+    if (message_arena != submessage_arena) {
+      registered_user = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, registered_user, submessage_arena);
+    }
+    set_has_registered_user();
+    to_user_.registered_user_ = registered_user;
+  }
+  // @@protoc_insertion_point(field_set_allocated:user.PrivateMessageOut.registered_user)
+}
+void PrivateMessageOut::set_allocated_guest_user(::user::GuestUser* guest_user) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_to_user();
+  if (guest_user) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(guest_user);
+    if (message_arena != submessage_arena) {
+      guest_user = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, guest_user, submessage_arena);
+    }
+    set_has_guest_user();
+    to_user_.guest_user_ = guest_user;
+  }
+  // @@protoc_insertion_point(field_set_allocated:user.PrivateMessageOut.guest_user)
+}
+void PrivateMessageOut::clear_timestamp() {
+  if (GetArena() == nullptr && timestamp_ != nullptr) {
+    delete timestamp_;
+  }
+  timestamp_ = nullptr;
+}
+PrivateMessageOut::PrivateMessageOut(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:user.PrivateMessageOut)
+}
+PrivateMessageOut::PrivateMessageOut(const PrivateMessageOut& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  content_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_content().empty()) {
+    content_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_content(),
+      GetArena());
+  }
+  if (from._internal_has_timestamp()) {
+    timestamp_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.timestamp_);
+  } else {
+    timestamp_ = nullptr;
+  }
+  clear_has_to_user();
+  switch (from.to_user_case()) {
+    case kRegisteredUser: {
+      _internal_mutable_registered_user()->::user::RegisteredUser::MergeFrom(from._internal_registered_user());
+      break;
+    }
+    case kGuestUser: {
+      _internal_mutable_guest_user()->::user::GuestUser::MergeFrom(from._internal_guest_user());
+      break;
+    }
+    case TO_USER_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:user.PrivateMessageOut)
+}
+
+void PrivateMessageOut::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrivateMessageOut_user_2eproto.base);
+  content_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  timestamp_ = nullptr;
+  clear_has_to_user();
+}
+
+PrivateMessageOut::~PrivateMessageOut() {
+  // @@protoc_insertion_point(destructor:user.PrivateMessageOut)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void PrivateMessageOut::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  content_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete timestamp_;
+  if (has_to_user()) {
+    clear_to_user();
+  }
+}
+
+void PrivateMessageOut::ArenaDtor(void* object) {
+  PrivateMessageOut* _this = reinterpret_cast< PrivateMessageOut* >(object);
+  (void)_this;
+}
+void PrivateMessageOut::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void PrivateMessageOut::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const PrivateMessageOut& PrivateMessageOut::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrivateMessageOut_user_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void PrivateMessageOut::clear_to_user() {
+// @@protoc_insertion_point(one_of_clear_start:user.PrivateMessageOut)
+  switch (to_user_case()) {
+    case kRegisteredUser: {
+      if (GetArena() == nullptr) {
+        delete to_user_.registered_user_;
+      }
+      break;
+    }
+    case kGuestUser: {
+      if (GetArena() == nullptr) {
+        delete to_user_.guest_user_;
+      }
+      break;
+    }
+    case TO_USER_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = TO_USER_NOT_SET;
+}
+
+
+void PrivateMessageOut::Clear() {
+// @@protoc_insertion_point(message_clear_start:user.PrivateMessageOut)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  content_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && timestamp_ != nullptr) {
+    delete timestamp_;
+  }
+  timestamp_ = nullptr;
+  clear_to_user();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* PrivateMessageOut::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .user.RegisteredUser registered_user = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_registered_user(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .user.GuestUser guest_user = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_guest_user(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string content = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_content();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.PrivateMessageOut.content"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp timestamp = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_timestamp(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PrivateMessageOut::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:user.PrivateMessageOut)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .user.RegisteredUser registered_user = 1;
+  if (_internal_has_registered_user()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::registered_user(this), target, stream);
+  }
+
+  // .user.GuestUser guest_user = 2;
+  if (_internal_has_guest_user()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::guest_user(this), target, stream);
+  }
+
+  // string content = 3;
+  if (this->content().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "user.PrivateMessageOut.content");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_content(), target);
+  }
+
+  // .google.protobuf.Timestamp timestamp = 4;
+  if (this->has_timestamp()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::timestamp(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:user.PrivateMessageOut)
+  return target;
+}
+
+size_t PrivateMessageOut::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user.PrivateMessageOut)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string content = 3;
+  if (this->content().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_content());
+  }
+
+  // .google.protobuf.Timestamp timestamp = 4;
+  if (this->has_timestamp()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *timestamp_);
+  }
+
+  switch (to_user_case()) {
+    // .user.RegisteredUser registered_user = 1;
+    case kRegisteredUser: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *to_user_.registered_user_);
+      break;
+    }
+    // .user.GuestUser guest_user = 2;
+    case kGuestUser: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *to_user_.guest_user_);
+      break;
+    }
+    case TO_USER_NOT_SET: {
+      break;
+    }
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PrivateMessageOut::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:user.PrivateMessageOut)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PrivateMessageOut* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrivateMessageOut>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:user.PrivateMessageOut)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:user.PrivateMessageOut)
+    MergeFrom(*source);
+  }
+}
+
+void PrivateMessageOut::MergeFrom(const PrivateMessageOut& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:user.PrivateMessageOut)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.content().size() > 0) {
+    _internal_set_content(from._internal_content());
+  }
+  if (from.has_timestamp()) {
+    _internal_mutable_timestamp()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_timestamp());
+  }
+  switch (from.to_user_case()) {
+    case kRegisteredUser: {
+      _internal_mutable_registered_user()->::user::RegisteredUser::MergeFrom(from._internal_registered_user());
+      break;
+    }
+    case kGuestUser: {
+      _internal_mutable_guest_user()->::user::GuestUser::MergeFrom(from._internal_guest_user());
+      break;
+    }
+    case TO_USER_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void PrivateMessageOut::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:user.PrivateMessageOut)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PrivateMessageOut::CopyFrom(const PrivateMessageOut& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user.PrivateMessageOut)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PrivateMessageOut::IsInitialized() const {
+  return true;
+}
+
+void PrivateMessageOut::InternalSwap(PrivateMessageOut* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  content_.Swap(&other->content_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(timestamp_, other->timestamp_);
+  swap(to_user_, other->to_user_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PrivateMessageOut::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -1024,8 +1473,11 @@ template<> PROTOBUF_NOINLINE ::user::RegisteredUser* Arena::CreateMaybeMessage< 
 template<> PROTOBUF_NOINLINE ::user::GuestUser* Arena::CreateMaybeMessage< ::user::GuestUser >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user::GuestUser >(arena);
 }
-template<> PROTOBUF_NOINLINE ::user::PrivateMessage* Arena::CreateMaybeMessage< ::user::PrivateMessage >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::user::PrivateMessage >(arena);
+template<> PROTOBUF_NOINLINE ::user::PrivateMessageIn* Arena::CreateMaybeMessage< ::user::PrivateMessageIn >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user::PrivateMessageIn >(arena);
+}
+template<> PROTOBUF_NOINLINE ::user::PrivateMessageOut* Arena::CreateMaybeMessage< ::user::PrivateMessageOut >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user::PrivateMessageOut >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
